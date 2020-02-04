@@ -2,10 +2,18 @@ package models;
 
 public class Article {
 
+    private int _articleID;
     private String _article;
     private String _articleCategory;
     private double _price;
 
+
+    public int getArticleID(){return this._articleID;}
+    public void setArticleID(int articleID){
+        if(articleID > 0){
+            this._articleID = articleID;
+        }
+    }
     public String getArticle() {
         return _article;
     }
@@ -31,8 +39,9 @@ public class Article {
             this._price = price;
         }
     }
-    public Article(){this("", "", 0.0);}
-    public Article(String article, String articleCategory, double price){
+    public Article(){this(0, "", "", 0.0);}
+    public Article(int articleID, String article, String articleCategory, double price){
+        this.setArticleID(articleID);
         this.setArticle(article);
         this.setArticleCategory(articleCategory);
         this.setPrice(price); // we need to use setter because if we use this._xy we would directly insert values, even
@@ -42,7 +51,8 @@ public class Article {
     @Override
     public String toString() {
         return "Article{" +
-                "article='" + this.getArticle() + '\'' +
+                "article_ID='" + this.getArticleID() + '\'' +
+                ", article='" + this.getArticle() + '\'' +
                 ", articleCategory='" + this.getArticleCategory() + '\'' +
                 ", price=" + this.getPrice() +
                 '}';
