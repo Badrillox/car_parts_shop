@@ -35,24 +35,32 @@ public class Shop {
         }
         return null;
     }
-    public Article searchArticleByName(String name){
+    public List<Article> searchArticleByName(String name){
+        List<Article> foundArticles = new LinkedList<>();
         for(Article a : this._articles){
             if(a.getArticleName() == name){
-                return a;
+                foundArticles.add(a);
+               }
             }
+        if(foundArticles.size() >= 0){
+            return foundArticles;
         }
         return null;
     }
-    public Article searchArticleByPriceRange(double minValue, double maxValue){
-        double tmp = minValue;
+    public List<Article> searchArticleByPriceRange(double minValue, double maxValue){
+        double temp = minValue;
         if(minValue > maxValue){
             minValue = maxValue;
-            maxValue = tmp;
+            maxValue = temp;
         }
+        List<Article> foundArticles = new LinkedList<>();
         for(Article a : this._articles){
-            if((a.getPrice() > minValue) && (a.getPrice() < maxValue)){
-                return a;
+            if((a.getPrice() >= minValue) &&(a.getPrice() <= maxValue)){
+                foundArticles.add(a);
             }
+        }
+        if(foundArticles.size() > 0){
+            return foundArticles;
         }
         return null;
     }
@@ -67,7 +75,7 @@ public class Shop {
     public String toString(){
         StringBuilder s = new StringBuilder();
 
-        for(Article a: _articles){
+        for(Article a: this._articles){
             s.append(a.getArticleID()).append(" ").append(a.getArticleName()).append(" ").append(a.getPrice()).append("€\n");
         }
 
