@@ -43,6 +43,19 @@ public class Shop {
         }
         return null;
     }
+    public Article searchArticleByPriceRange(double minValue, double maxValue){
+        double tmp = minValue;
+        if(minValue > maxValue){
+            minValue = maxValue;
+            maxValue = tmp;
+        }
+        for(Article a : this._articles){
+            if((a.getPrice() > minValue) && (a.getPrice() < maxValue)){
+                return a;
+            }
+        }
+        return null;
+    }
 
     public Shop(){this("", null);}
     public Shop(String shopName, Address address){
