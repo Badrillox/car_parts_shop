@@ -24,7 +24,7 @@ public class Shop {
 
     }
 
-    public Shop(){this.();}
+    public Shop(){this("", null);}
     public Shop(String shopName, Address address){
         this.setAddress(address);
         this.setShopName(shopName);
@@ -34,7 +34,7 @@ public class Shop {
         StringBuilder s = new StringBuilder();
 
         for(Article a: _articles){
-           // s.append(a.getArticleID()).append(" ").append(a.getArticleName()).append(" ").append(a.getPrice()).append("€\n");
+            s.append(a.getArticleID()).append(" ").append(a.getArticleName()).append(" ").append(a.getPrice()).append("€\n");
         }
 
         return s.toString();

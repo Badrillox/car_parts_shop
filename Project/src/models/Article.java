@@ -3,7 +3,7 @@ package models;
 public class Article {
 
     private int _articleID;
-    private String _article;
+    private String _articleName;
     private String _articleCategory;
     private double _price;
 
@@ -14,12 +14,12 @@ public class Article {
             this._articleID = articleID;
         }
     }
-    public String getArticle() {
-        return _article;
+    public String getArticleName() {
+        return _articleName;
     }
 
-    public void setArticle(String article) {
-        this._article = article;
+    public void setArticleName(String articleName) {
+        this._articleName = articleName;
     }
 
     public String getArticleCategory() {
@@ -40,9 +40,9 @@ public class Article {
         }
     }
     public Article(){this(0, "", "", 0.0);}
-    public Article(int articleID, String article, String articleCategory, double price){
+    public Article(int articleID, String articleName, String articleCategory, double price){
         this.setArticleID(articleID);
-        this.setArticle(article);
+        this.setArticleName(articleName);
         this.setArticleCategory(articleCategory);
         this.setPrice(price); // we need to use setter because if we use this._xy we would directly insert values, even
                               // though it makes no sense to insert those values (-x and 0)
@@ -52,7 +52,7 @@ public class Article {
     public String toString() {
         return "Article{" +
                 "article_ID='" + this.getArticleID() + '\'' +
-                ", article='" + this.getArticle() + '\'' +
+                ", article='" + this.getArticleName() + '\'' +
                 ", articleCategory='" + this.getArticleCategory() + '\'' +
                 ", price=" + this.getPrice() +
                 '}';
