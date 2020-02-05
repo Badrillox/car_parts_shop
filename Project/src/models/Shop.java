@@ -20,14 +20,35 @@ public class Shop {
     //searchByMethods
 
     public Article searchArticleByID(int id){
-
-
+    for(Article a : this._articles){
+        if(a.getArticleID() == id){
+            return a;
+        }
+    }
+        return null;
+    }
+    public Article searchArticleByCategory(String category){
+        for(Article a : this._articles){
+            if(a.getArticleCategory() == category){
+                return a;
+            }
+        }
+        return null;
+    }
+    public Article searchArticleByName(String name){
+        for(Article a : this._articles){
+            if(a.getArticleName() == name){
+                return a;
+            }
+        }
+        return null;
     }
 
     public Shop(){this("", null);}
     public Shop(String shopName, Address address){
         this.setAddress(address);
         this.setShopName(shopName);
+        createArticlesForShop();
     }
     @Override
     public String toString(){
@@ -38,5 +59,8 @@ public class Shop {
         }
 
         return s.toString();
+    }
+    public void createArticlesForShop(){
+
     }
 }
