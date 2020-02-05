@@ -74,6 +74,5 @@ public class Shop {
         return s.toString();
     }
     public void createArticlesForShop(){
-
     }
 }
