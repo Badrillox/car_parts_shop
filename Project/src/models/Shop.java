@@ -76,11 +76,12 @@ public class Shop {
         StringBuilder s = new StringBuilder();
 
         for(Article a: this._articles){
-            s.append(a.getArticleID()).append(" ").append(a.getArticleName()).append(" ").append(a.getPrice()).append("€\n");
+            s.append(a.getArticleID()).append(" ").append(a.getArticleName()).append(" ").append(a.getPrice()).append("€\n"); // z.B. 1 XY 100€
         }
 
         return s.toString();
     }
     public void createArticlesForShop(){
+        // inheritance from Article.java (turbocharger, supercharger, wheels, spoiler, exhaust, pipes)
     }
 }
