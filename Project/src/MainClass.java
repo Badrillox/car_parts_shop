@@ -34,7 +34,6 @@ public class MainClass {
                     break;
                 default:
                     System.out.println("Try again with the right key");
-                    System.exit(1);
             }
         }while(choice != 'x');
 
