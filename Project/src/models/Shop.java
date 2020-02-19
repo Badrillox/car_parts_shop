@@ -38,7 +38,7 @@ public class Shop {
     public List<Article> searchArticleByName(String name){
         List<Article> foundArticles = new LinkedList<>();
         for(Article a : this._articles){
-            if(a.getArticleName() == name){
+            if(a.getArticleName().equals(name)){
                 foundArticles.add(a);
                }
             }
@@ -82,6 +82,12 @@ public class Shop {
         return s.toString();
     }
     public void createArticlesForShop(){
-        // inheritance from Article.java (turbocharger, supercharger, wheels, spoiler, exhaust, pipes)
+        // inheritance from Article.java (turbocharger, wheels, spoiler, exhaust-pipes)
+        this._articles.add(new Spoiler(1, "FalconWing-Extreme", "Spoiler", 6580.99,
+                Brands.Tesla,Materials.Chrom));
+        this._articles.add(new Wheels(2, "ToxicRunners", "Wheels", 2080.00,
+                Brands.Audi, 21, 220, 65, 'Y', 'R'));
+        this._articles.add(new Turbocharger(3, "Supracharger", "Turbocharger", 6920.99,
+                Brands.Toyota, 190000.00, 600));
     }
 }

@@ -1,6 +1,6 @@
 package models;
 
-public class Article {
+public abstract class Article {
 
     private int _articleID;
     private String _articleName;

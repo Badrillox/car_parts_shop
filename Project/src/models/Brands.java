@@ -1,5 +1,5 @@
 package models;
 
 public enum Brands {
-    Audi, VW, Toyota, Volvo, Mercedes, Dodge;
+    Audi, VW, Toyota, Volvo, Mercedes, Dodge, Tesla;
 }

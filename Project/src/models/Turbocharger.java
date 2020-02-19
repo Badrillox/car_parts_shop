@@ -9,9 +9,9 @@ public void setRoundsPerMinute(double rpm){this._rpm = rpm;}
 public long getValueOfMinimumHorsePower(){return this._valueOfMinHP;}
 public void setValueOfMinimumHorsePower(long valueOfMinHP){this._valueOfMinHP = valueOfMinHP;}
 
-public Turbocharger(){this(0.0, 0, 0, "", "", 0.0, null);}
-public Turbocharger(double rpm, long valueOfMinHP, int articleID, String articleName, String articleCategory,
-                    double price, Brands brand){
+public Turbocharger(){this(0, "", "", 0.0, null, 0.0, 0);}
+public Turbocharger(int articleID, String articleName, String articleCategory,
+                    double price, Brands brand, double rpm, long valueOfMinHP){
     super(articleID, articleName, articleCategory, price, brand);
     this.setRoundsPerMinute(rpm);
     this.setValueOfMinimumHorsePower(valueOfMinHP);
@@ -19,10 +19,10 @@ public Turbocharger(double rpm, long valueOfMinHP, int articleID, String article
 
     @Override
     public String toString() {
-        return "Turbocharger{" +
-                super.toString() +
-                "_rpm=" + this.getRoundsPerMinute() +
-                ", _valueOfMinHP=" + this.getValueOfMinimumHorsePower() +
+        return super.toString() +
+                "Turbocharger{" +
+                "rpm=" + this.getRoundsPerMinute() +
+                ", valueOfMinHP=" + this.getValueOfMinimumHorsePower() +
                 '}';
     }
 }
